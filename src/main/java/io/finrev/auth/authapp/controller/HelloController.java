@@ -2,8 +2,7 @@ package io.finrev.auth.authapp.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
@@ -26,5 +25,12 @@ public class HelloController {
     String hello() {
         org.springframework.security.core.userdetails.User activeUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return "Hello (" + activeUser.getUsername() + ")";
+    }
+
+    @PreAuthorize("#oauth2.hasScope('read')")
+    @RequestMapping(method = RequestMethod.GET, value = "/foos/{id}")
+    @ResponseBody
+    public String findById(@PathVariable long id) {
+        return "!!!!";
     }
 }
