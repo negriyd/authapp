@@ -1,7 +1,7 @@
 package io.finrev.auth.authapp.dao;
 
-import io.finrev.auth.authapp.model.A_Role;
+import io.finrev.auth.authapp.model.ARole;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RoleDao extends JpaRepository<A_Role, Long> {
+public interface RoleDao extends JpaRepository<ARole, Long> {
 }

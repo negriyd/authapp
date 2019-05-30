@@ -3,15 +3,16 @@ package io.finrev.auth.authapp.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class A_Role {
+@ToString(exclude="users")
+public class ARole {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,6 +20,4 @@ public class A_Role {
 
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<A_User> users;
 }
