@@ -1,8 +1,5 @@
 package io.finrev.auth.authapp.service;
 
-import io.finrev.auth.authapp.dao.UserDao;
-import io.finrev.auth.authapp.model.ARole;
-import io.finrev.auth.authapp.model.AUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,10 +17,10 @@ import java.util.Set;
  *
  */
 
-@Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+//@Service
+public class UserDetailsServiceImpl {//} implements UserDetailsService {
 
-    @Autowired
+    /*@Autowired
     private UserDao userDao;
 
     @Override
@@ -37,5 +34,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
         }
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
-    }
+    }*/
 }

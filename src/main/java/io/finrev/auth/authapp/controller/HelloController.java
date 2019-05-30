@@ -21,4 +21,10 @@ public class HelloController {
         org.springframework.security.core.userdetails.User activeUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return "Hello Admin (" + activeUser.getUsername() + ")";
     }
+
+    @GetMapping("/hello")
+    String hello() {
+        org.springframework.security.core.userdetails.User activeUser = (org.springframework.security.core.userdetails.User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return "Hello (" + activeUser.getUsername() + ")";
+    }
 }
